@@ -1,13 +1,12 @@
+import java.util.Scanner;
+
 public class MD9 {
     public static void main(String[] args) throws Exception {
-
-        long num1 = 12312312313l;
-    
-        System.out.println(num1);
-        
-        System.out.println("*********");
-
-        int num2 = (int) num1;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Digite um numero: ");
+        int num = s.nextInt();
+        Integer num2 = num;
         System.out.println(num2);
+        s.close();
     }
 }
