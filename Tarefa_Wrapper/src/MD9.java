@@ -5,6 +5,7 @@ public class MD9 {
         Scanner s = new Scanner(System.in);
         System.out.println("Digite um numero: ");
         int num = s.nextInt();
+        System.out.println("*****************");
         Integer num2 = num;
         System.out.println(num2);
         s.close();
