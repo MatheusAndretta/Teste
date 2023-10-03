@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="MD5/PrimeiroProjeto/src"/>
+	<classpathentry kind="src" path="Tarefa_Classes/src"/>
+	<classpathentry kind="src" path="Tarefa_coleções/Tarefa/src"/>
+	<classpathentry kind="src" path="Tarefa_ControleDeFluxo/Media/src"/>
+	<classpathentry kind="src" path="Tarefa_Wrapper/src"/>
+	<classpathentry kind="src" path="TarefaCalculoMedia/src"/>
+	<classpathentry kind="output" path="TarefaCalculoMedia/bin"/>
+</classpath>
