@@ -17,11 +17,13 @@ public class MainTeste {
         .filter(pessoas -> pessoas.getSexo().equals("Mulher"))
         .collect(Collectors.groupingBy(Pessoas::getSexo));
 
-       List<Pessoas> listaDeMulheres = lista.stream()
+      /*  List<Pessoas> listaDeMulheres = lista.stream()
         .filter(pessoas -> pessoas.getSexo().equals("Mulher"))
         .collect(Collectors.toList());
 
-        Assert.assertEquals(listaDeMulheres, mapM.get("Mulher"));
+        Assert.assertEquals(listaDeMulheres, mapM.get("Mulher"));*/
+
+        Assert.assertEquals(true,mapM.equals("Mulher"));
 
     }
 }
