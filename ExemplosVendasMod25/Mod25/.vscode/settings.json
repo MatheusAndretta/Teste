@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "srcTeste/pacoteTeste",
+        "src",
+        "srcTeste/Dao"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}
