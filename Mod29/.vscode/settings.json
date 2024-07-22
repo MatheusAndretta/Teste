@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "Main\\src",
+        "Main\\src\\main\\domain",
+        "Main\\teste\\main"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\okunk\\Desktop\\java\\jdbcJava\\postgresql-42.7.3.jar",
+        "test-lib\\**\\*.jar"
+    ]
+}
