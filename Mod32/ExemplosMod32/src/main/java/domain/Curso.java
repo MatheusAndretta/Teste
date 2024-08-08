@@ -23,7 +23,7 @@ public class Curso {
     @Column(name = "NOME",length = 50,nullable = false)
     private String nome;
 
-    @Column(name = "DESC",length = 100,nullable = false)
+    @Column(name = "descricao",length = 100,nullable = false)
     private String descricao;
 
     public Long getId() {
@@ -50,5 +50,6 @@ public class Curso {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+   
     
 }
