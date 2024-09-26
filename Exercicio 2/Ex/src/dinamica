@@ -1,0 +1,7 @@
+Por que a solução com Programação Dinâmica é Melhor?:
+1 Eficiência: A abordagem PD reduz drasticamente o número de cálculos, especialmente para valores maiores de n
+2 Uso de Memória: Embora ambas as abordagens usem memória, a solução PD usa um array para armazenar resultados, 
+enquanto a abordagem recursiva padrão usa a pilha de chamadas, que pode causar um estouro de pilha para entradas grand
+3 Simplicidade de implementação: A implementação com PD é mais direta e menos propensa a erros, dado que não há múltiplas chamadas recursivas.
+
+Conclusão: A solução de programação dinâmica é significativamente melhor em termos de eficiência e escalabilidade ao calcular números de Fibonacci
