@@ -33,4 +33,8 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
+    public boolean existById(String id) {
+        return categoryRepository.existsById(id);
+    }
+
 }

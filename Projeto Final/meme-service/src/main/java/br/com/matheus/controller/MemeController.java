@@ -23,38 +23,40 @@ public class MemeController {
     @Autowired
     private MemeService memeService;
 
-        @PostMapping("/create")
-   public ResponseEntity<Meme> createUser(@RequestBody Meme meme){
-    System.out.println("Meme: " + meme.getNome() + " Foi cadastrado com sucesso!" );
-    return ResponseEntity.ok(memeService.createMeme(meme));
-   }
+    @PostMapping("/create")
+    public ResponseEntity<Meme> createMeme(@RequestBody Meme meme) {
+        if (meme.getUserId() == null || meme.getUserId().isEmpty()) {
+            return ResponseEntity.badRequest().body(null);
+        }
+        System.out.println("Meme: " + meme.getNome() + " Foi cadastrado com sucesso!");
+        return ResponseEntity.ok(memeService.createMeme(meme));
+    }
 
     @GetMapping("/all")
     public List<Meme> getAllUsers() {
         return memeService.getAllMemes();
     }
 
-     @GetMapping("/get/{id}")
-    public ResponseEntity<Meme> getById(@PathVariable(value = "id")String id){
+    @GetMapping("/get/{id}")
+    public ResponseEntity<Meme> getById(@PathVariable(value = "id") String id) {
         System.out.println("ID do meme : " + id + "foi encontrado!");
         return ResponseEntity.ok(memeService.getMemeById(id));
     }
 
-     @PutMapping("/update/{id}")
-    public ResponseEntity<Meme> updateUser(@RequestBody Meme meme){
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Meme> updateUser(@RequestBody Meme meme) {
         System.out.println("O Meme: " + meme.getId() + " foi alterado com sucesso");
         return ResponseEntity.ok(memeService.updateMeme(meme));
     }
 
     @GetMapping("/memeday")
-    public Meme memeOfDay(){
+    public Meme memeOfDay() {
         System.out.println("Foi encontado um Meme aleatorio");
         return memeService.memeOfDay();
     }
 
-
     @DeleteMapping("/del/{id}")
-    public void deleteMeme(@PathVariable(value = "id")String id){
+    public void deleteMeme(@PathVariable(value = "id") String id) {
         System.out.println("Meme: " + id + " foi deletado com sucesso");
         memeService.deleteMeme(id);
     }

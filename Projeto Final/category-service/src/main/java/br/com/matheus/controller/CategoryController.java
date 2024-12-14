@@ -24,7 +24,11 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @PostMapping("/create")
-   public ResponseEntity<Category> createUser(@RequestBody Category category){
+   public ResponseEntity<Category> createCategory(@RequestBody Category category){
+    if (category.getMemeId() == null || category.getMemeId().isEmpty()) {
+        return ResponseEntity.badRequest().body(null);
+    }
+
     System.out.println("Categoria de nome: " + category.getNomeDaCategoria() + " Foi cadastrado com sucesso!" );
     return ResponseEntity.ok(categoryService.createCategory(category));
    }
@@ -51,6 +55,13 @@ public class CategoryController {
         System.out.println("Categoria: " + id + " foi deletado com sucesso");
         categoryService.deleteCategory(id);
     }
+
+
+    @GetMapping("/{id}/exists")
+    public boolean userExists(@PathVariable String id) {
+        return categoryService.existById(id);
+    }
+
    
 
 }

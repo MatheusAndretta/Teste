@@ -17,39 +17,50 @@ import br.com.matheus.entities.User;
 import br.com.matheus.services.UserService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @PostMapping("/create")
-   public ResponseEntity<User> createUser(@RequestBody User user){
-    System.out.println("Usuario: " + user.getNome() + " Foi cadastrado com sucesso!" );
-    return ResponseEntity.ok(userService.createUser(user));
-   }
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        System.out.println("Usuario: " + user.getNome() + " Foi cadastrado com sucesso!");
+        return ResponseEntity.ok(userService.createUser(user));
+    }
 
     @GetMapping("/all")
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
-     @GetMapping("/get/{id}")
-    public ResponseEntity<User> getById(@PathVariable(value = "id")String id){
+    @GetMapping("/get/{id}")
+    public ResponseEntity<User> getById(@PathVariable(value = "id") String id) {
         System.out.println("ID: " + id + "foi encontrado!");
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
-     @PutMapping("/update/{id}")
-    public ResponseEntity<User> updateUser(@RequestBody User user){
+    @PutMapping("/update/{id}")
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
         System.out.println("O usuario: " + user.getId() + " foi alterado com sucesso");
         return ResponseEntity.ok(userService.updateUser(user));
     }
 
     @DeleteMapping("/del/{id}")
-    public void deleteUser(@PathVariable(value = "id")String id){
+    public void deleteUser(@PathVariable(value = "id") String id) {
         System.out.println("Usuario: " + id + " foi deletado com sucesso");
         userService.deleteUser(id);
     }
-   
+
+    @GetMapping("/{id}/exists")
+    public boolean userExists(@PathVariable String id) {
+        return userService.existById(id);
+    }
+
+    // @GetMapping("/{id}/exists")
+    // public ResponseEntity<Boolean> userExists(@PathVariable String id) {
+    // boolean exists = userService.existById(id);
+    // return ResponseEntity.ok(exists);
+    // }
+
 }

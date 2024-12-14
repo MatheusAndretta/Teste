@@ -1,5 +1,7 @@
 package br.com.matheus.entities;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,7 +13,14 @@ public class Meme {
     private String nome;
     private String descricao;
     private String url;
-    private String dataCadastro;
+    private Date dataCadastro;
+    private String userId;
+
+    
+    
+    public Meme() {
+        this.dataCadastro = new Date();
+    }
     
     public String getId() {
         return id;
@@ -37,10 +46,18 @@ public class Meme {
     public void setUrl(String url) {
         this.url = url;
     }
-    public String getDataCadastro() {
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Date getDataCadastro() {
         return dataCadastro;
     }
-    public void setDataCadastro(String dataCadastro) {
+
+    public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 

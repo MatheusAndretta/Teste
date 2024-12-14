@@ -34,5 +34,9 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    public boolean existById(String id) {
+        return userRepository.existsById(id);
+    }
+
 
 }
